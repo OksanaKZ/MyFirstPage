@@ -107,24 +107,21 @@ function getPosts() {
   .catch(err => console.log(err.message))
 }
 
-/* function createPost(title, body, userId) {
-  fetch('https://jsonplaceholder.typicode.com/posts', {
-    method: 'POST',
-    body: JSON.stringify({
-      title,
-      body,
-      userId,
-    }),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  })
-    .then(res => {
-      console.log(res)
-    })
-    .catch(err => console.log(err.message))
+showPostsBTN.onclick = () => {getPosts()}
+
+
+var title1 = ["\ud83d\ude22 Почему вы ушли\u2753", "\ud83d\udcdd Оставьте комментарий!", "\ud83d\ude0d Поделитесь с друзьями!"];
+i = 0;
+function new_title() {
+  i = (i + 1) % title1.length;
+  jQuery(document).prop("title", title1[i])
 }
 
-createPost('title', 'body', 15) */
-
-showPostsBTN.onclick = () => {getPosts()}
+window.onload = function() {
+  var a = document.title;
+  jQuery(document).bind("visibilitychange", function() {
+    document.hidden ? secinterval = setInterval(new_title, 2000) : clearInterval(secinterval);
+    jQuery(document).prop("title", document.hidden ? title[0] : a)
+  })
+ 
+}

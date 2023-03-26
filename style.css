@@ -10,11 +10,24 @@
 header {
     background-color: lightgrey;
     height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+nav > a:hover {
+    color: darkblue;
+}
+
+main {
+    margin-top: 50px;
 }
 
 nav {
+    width: inherit;
     height: inherit;
     display: flex;
+    justify-content: start;
     align-items: center;
 }
 nav > a {
@@ -23,6 +36,7 @@ nav > a {
     padding: 0 30px;
     font-size: 20px;
 }
+
 .about_us {
     display: flex;
     justify-content: center;
